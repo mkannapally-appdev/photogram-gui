@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
     @the_user.save
     
-    redirect_to ("/users/" + updated_username)
+    redirect_to ("/users/" + @the_user.username)
 
   end
 
