@@ -22,7 +22,7 @@ class PhotosController < ApplicationController
 
     the_photo = Photo.where({:id => the_id}).first
 
-    #the_photo.destroy
+    the_photo.destroy
     
     #render({:template => "photo_templates/delete.html.erb"})
 
