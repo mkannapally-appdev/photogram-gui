@@ -24,7 +24,7 @@
   <dd>
     <form action="/update_photo/<%= @the_photo.id %>">
       <label for="browser_image">Image</label>
-      <input id="browser_image" type="text" name="query_image" placeholder="Enter a URL for the image..." value=" <%= @the_photo.image %> ">
+      <input id="browser_image" type="text" name="query_image" placeholder="Enter a URL for the image..." value="<%= @the_photo.image %>">
 
       <label for="browser_caption">Caption</label>
       <textarea id="browser_caption" name="query_caption" placeholder="Enter a caption for the photo..."> <%= @the_photo.caption %> </textarea>
@@ -62,7 +62,7 @@
 
 <h3>  Add a new comment  </h3>
 
-<form>
+<form action="/add_comment">
   <label for="photo_id"> Photo ID </label>
   <input id="photo_id" name="query_photo_id" value="<%= @the_photo.id %>">
 
@@ -73,6 +73,5 @@
   <textarea id="user_comment" name="query_comment" placeholder="Enter a comment..."></textarea>
 
   <button> Add comment </button>
-
 
 </form>
