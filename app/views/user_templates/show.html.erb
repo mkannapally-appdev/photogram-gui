@@ -6,9 +6,15 @@
     <dt> ID </dt>
     <dd> <%= @the_user.id %></dd>
 
-    <dt> Edit User </dt>
+    <dt> Edit user </dt>
     <dd> 
-      Username 
+      <form action="/update_user/<%= @the_user.username %>">
+
+        <label for="user_id"> Username  </label>
+        <input id="user_id" name="query_user" placeholder="<%= @the_user.username %>">   
+
+        <button> Update user  </button>
+      </form> 
       
     </dd>
 </dl>

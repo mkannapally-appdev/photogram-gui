@@ -32,4 +32,22 @@ class UsersController < ApplicationController
 
   end
 
+  def update
+
+    updated_username = params.fetch("query_user")
+
+    username = params.fetch("username")
+
+    matching_usernames = User.all.where(:username => username)
+
+    @the_user = matching_usernames.first
+
+    @the_user.username = updated_username
+
+    @the_user.save
+    
+    redirect_to ("/users/" + updated_username)
+
+  end
+
 end
