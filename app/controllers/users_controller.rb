@@ -8,5 +8,14 @@ class UsersController < ApplicationController
     render ({:template => "user_templates/index.html.erb"})
   end
 
+  def show
+    username = params.fetch("username")
+    
+    matching_usernames = User.all.where(:username => username)
+
+    @the_user = matching_usernames.first
+
+    render({:template => "user_templates/show.html.erb"})
+  end
 
 end
