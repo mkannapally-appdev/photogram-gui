@@ -63,14 +63,14 @@
 <h3>  Add a new comment  </h3>
 
 <form>
-  <label> </label>
-  <input>
+  <label for="photo_id"> Photo ID </label>
+  <input id="photo_id" name="query_photo_id" value="<%= @the_photo.id %>">
 
-  <label> </label>
-  <input>
+  <label for="author_id"> Author ID </label>
+  <input id= "author_id" name="query_user_id">
 
-  <label> </label>
-  <textarea> </textarea>
+  <label for="user_comment"> Comment </label>
+  <textarea id="user_comment" name="query_comment" placeholder="Enter a comment..."></textarea>
 
   <button> Add comment </button>
 
