@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 
   def index
+
     matching_users = User.all
     @list_of_users = matching_users.order({:username => :asc})
 
@@ -16,6 +17,19 @@ class UsersController < ApplicationController
     @the_user = matching_usernames.first
 
     render({:template => "user_templates/show.html.erb"})
+  end
+
+  def create
+
+    new_user_name = params.fetch("query_user")
+
+    new_user = User.new
+    new_user.username = new_user_name
+
+    new_user.save
+    
+    redirect_to ("/users/" + new_user_name)
+
   end
 
 end
